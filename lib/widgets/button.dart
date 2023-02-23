@@ -21,7 +21,8 @@ class OathButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.transparent)
+          backgroundColor: MaterialStateProperty.all(Colors.transparent),
+          splashFactory: InkSplash.splashFactory
         ),
         onPressed: onPressed(),
         child: Center(

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/utils/app_colors.dart';
 
-class OathButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final String title;
-  final Function onPressed;
+  final Function() onPressed;
   final Color backgroundColor;
   final Color textColor;
 
-  const OathButton({Key? key, required this.title, required this.onPressed, required this.backgroundColor, required this.textColor}) : super(key: key);
+  const CustomButton({Key? key, required this.title, required this.onPressed, required this.backgroundColor, required this.textColor}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +15,17 @@ class OathButton extends StatelessWidget {
       height: 55,
       width: double.maxFinite,
       decoration: BoxDecoration(
-        color: backgroundColor,
+        color: Colors.transparent,
         borderRadius: BorderRadius.circular(30),
         border: Border.all(color: AppColors.primaryColor,width: 1)
       ),
       child: ElevatedButton(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.transparent),
+          backgroundColor: MaterialStateProperty.all(backgroundColor),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
           splashFactory: InkSplash.splashFactory
         ),
-        onPressed: onPressed(),
+        onPressed: onPressed,
         child: Center(
           child: Text(
             title,

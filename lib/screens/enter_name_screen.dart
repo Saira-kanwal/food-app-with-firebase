@@ -59,7 +59,7 @@ class EnterNameScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                OathButton(
+                CustomButton(
                   title: 'Continue',
                   onPressed: (){
                   },

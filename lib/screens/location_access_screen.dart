@@ -4,7 +4,6 @@ import 'package:food_app/utils/app_colors.dart';
 import 'package:food_app/viewModels/auth_viewModel.dart';
 import 'package:provider/provider.dart';
 import '../widgets/button.dart';
-import '../widgets/input_field.dart';
 
 class LocationAccessScreen extends StatelessWidget {
   const LocationAccessScreen ({Key? key}) : super(key: key);
@@ -57,7 +56,7 @@ class LocationAccessScreen extends StatelessWidget {
                   SvgPicture.asset('assets/images/location.svg',),
                 ),
                 const Spacer(),
-                OathButton(
+                CustomButton(
                   title: 'Yes I\'m In',
                   onPressed: (){
                   },

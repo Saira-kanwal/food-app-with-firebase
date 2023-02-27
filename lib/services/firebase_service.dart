@@ -1,3 +1,7 @@
+import 'dart:io';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path/path.dart' as path;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -44,4 +48,26 @@ class FirebaseService
     }
 
   }
+
+  static add({required String collection, required Map<String, dynamic>doc})async
+{
+  await FirebaseFirestore.instance.collection(collection).add(doc);
+}
+
+static Future<String?> uploadFile({required BuildContext context, required File file}) async
+{
+  if(!file.existsSync())
+    {
+      return null;
+    }
+  String imageUrl = "" ;
+  String fileName = path.basename(file.path);
+  Reference reference = FirebaseStorage.instance.ref().child(fileName);
+  UploadTask uploadTask = reference.putFile(file);
+  TaskSnapshot snapshot = await uploadTask.whenComplete(() => {});
+  //imageUrl = await reference.getDownloadURL();
+  // OR
+  reference.getDownloadURL().then((value) => imageUrl = value);
+  return imageUrl;
+}
 }

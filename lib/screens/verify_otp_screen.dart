@@ -59,14 +59,14 @@ class OtpScreen extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                OathButton(
+                CustomButton(
                   title: 'Verify',
                   onPressed: (){},
                   backgroundColor: AppColors.primaryColor,
                   textColor: Colors.white,
                 ),
                 const SizedBox(height: 10,),
-                OathButton(
+                CustomButton(
                   title: 'Resend Code',
                   onPressed: (){},
                   backgroundColor: Colors.white,

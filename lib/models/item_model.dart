@@ -11,11 +11,11 @@ class Item
   final double? previousPrice;
   final String? imageUrl;
   final String? recipe;
-  final double? price;
-  final double? subTotal;
   final String? quantity;
+  final double? subTotal;
 
-  Item({this.id, this.name, this.category, this.description, this.restaurantId, this.currentPrice, this.previousPrice, this.imageUrl, this.recipe, this.subTotal, this.quantity,this.price });
+
+  Item({this.id, this.name, this.category, this.description, this.restaurantId, this.currentPrice, this.previousPrice, this.imageUrl, this.recipe, this.subTotal, this.quantity});
 
   factory Item.fromSnapshot(DocumentSnapshot snapshot)
   {
@@ -31,7 +31,6 @@ class Item
       recipe: snapshot.get("recipe"),
       subTotal: snapshot.get("subTotal"),
       quantity: snapshot.get("quantity"),
-      price: snapshot.get("price"),
     );
   }
 
@@ -49,7 +48,6 @@ class Item
       "recipe" : recipe,
       "subTotal" : subTotal,
       "quantity" : quantity,
-      "price" : price,
     };
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:food_app/screens/add_phone_screen.dart';
 import '../utils/app_colors.dart';
+import 'admin_panel.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   _openScreen()
   {
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AddPhoneScreen()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const AdminPanel()));
   }
 
   @override

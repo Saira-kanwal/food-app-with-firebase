@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/screens/splash_screen.dart';
 import 'package:food_app/viewModels/auth_viewModel.dart';
+import 'package:food_app/viewModels/category_viewModel.dart';
+import 'package:food_app/viewModels/item_viewModel.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -25,6 +27,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers:[
         ChangeNotifierProvider(create: (_) => AuthViewModel()),
+        ChangeNotifierProvider(create: (_) => ItemViewModel()),
+        ChangeNotifierProvider(create: (_) => CategoryViewModel()),
         ],
         child: ScreenUtilInit(
           designSize: const Size(360, 690),

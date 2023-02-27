@@ -59,7 +59,7 @@ class AddPhoneScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-              OathButton(
+              CustomButton(
                 title: 'Send code (OTP)',
                 onPressed: (){
                   vm.sendCode(context);
